@@ -97,3 +97,152 @@
     - **Procedimento do teste:** Escolher um modo de jogo e verificar se as regras são aplicadas corretamente.  
     - **Resultado esperado:** O jogo segue as regras do modo escolhido.  
     - **Pós-condição:** O jogador pode alternar entre diferentes modos para mais variedade.  
+
+
+
+
+# Requisitos Não Funcionais (RNFs) - Jogo de Forca Online
+
+- **RNF01 - Eficiência de Desempenho (ISO 25010)**  
+  - O sistema deve carregar e responder às interações em menos de **2 segundos** para garantir uma experiência fluida ao usuário.  
+
+  - **Critério de Aceitação (CA01):**  
+    - O tempo de carregamento das telas deve ser inferior a 2 segundos em 95% dos acessos.  
+
+  - **Teste (T01):**  
+    - **Pré-condição:** Acesso a uma conexão de internet padrão.  
+    - **Procedimento do teste:** Medir tempo de carregamento em diferentes páginas e ações.  
+    - **Resultado esperado:** O sistema carrega dentro do tempo estipulado.  
+    - **Pós-condição:** O usuário interage com o sistema sem atrasos perceptíveis.  
+
+- **RNF02 - Conformidade com WCAG 2.1 (ISO 25010)**  
+  - O sistema deve ser acessível para usuários com deficiência, seguindo as diretrizes **WCAG 2.1**.  
+
+  - **Critério de Aceitação (CA01):**  
+    - Compatibilidade com leitores de tela como **NVDA** e **JAWS**.  
+
+  - **Teste (T01):**  
+    - **Pré-condição:** Usuário com leitor de tela ativo.  
+    - **Procedimento do teste:** Navegar no sistema e validar acessibilidade dos elementos.  
+    - **Resultado esperado:** Todos os elementos são lidos corretamente pelo leitor de tela.  
+    - **Pós-condição:** Usuários com deficiência visual conseguem jogar sem dificuldades.  
+
+
+- **RNF03 - Proteção de Dados (ISO 25010)**  
+  - O sistema deve garantir a **proteção de dados dos usuários**, seguindo boas práticas de segurança cibernética.  
+
+  - **Critério de Aceitação (CA01):**  
+    - Implementação de autenticação segura e proteção contra ataques comuns, como **SQL Injection** e **Cross-Site Scripting (XSS)**.  
+
+  - **Teste (T01):**  
+    - **Pré-condição:** O sistema deve estar implementado com medidas de segurança.  
+    - **Procedimento do teste:** Realizar tentativas de acesso indevido e verificar a resistência do sistema.  
+    - **Resultado esperado:** Nenhuma vulnerabilidade é explorada com sucesso.  
+    - **Pós-condição:** O sistema mantém os dados dos usuários protegidos.  
+
+
+- **RNF04 - Suporte a um Grande Número de Usuários**  
+  - O sistema deve suportar **múltiplos jogadores simultaneamente** sem degradação de desempenho.  
+
+  - **Critério de Aceitação (CA01):**  
+    - O servidor deve ser capaz de lidar com **pelo menos 1000 jogadores concorrentes** sem perda de performance.  
+
+  - **Teste (T01):**  
+    - **Pré-condição:** Teste de carga com múltiplos usuários conectados simultaneamente.  
+    - **Procedimento do teste:** Simular acessos simultâneos e medir o impacto no desempenho.  
+    - **Resultado esperado:** O jogo mantém a estabilidade mesmo com alto número de acessos.  
+    - **Pós-condição:** O sistema continua operacional sem quedas.  
+
+
+- **RNF05 - Suporte a Múltiplos Dispositivos e Navegadores**  
+  - O jogo deve ser compatível com os **principais navegadores e dispositivos móveis**.  
+
+  - **Critério de Aceitação (CA01):**  
+    - O sistema deve ser testado e funcionar corretamente em **Google Chrome, Mozilla Firefox, Microsoft Edge e Safari**.  
+    - O jogo deve ser responsivo e adaptar-se corretamente a **smartphones e tablets**.  
+
+  - **Teste (T01):**  
+    - **Pré-condição:** Acesso ao sistema a partir de diferentes navegadores e dispositivos.  
+    - **Procedimento do teste:** Validar a interface e funcionalidade em cada navegador e dispositivo.  
+    - **Resultado esperado:** O jogo mantém sua usabilidade e jogabilidade em todas as plataformas testadas.  
+    - **Pós-condição:** Nenhuma funcionalidade essencial é perdida em diferentes dispositivos.  
+
+- **RNF06 - Uptime mínimo garantido**  
+  - O sistema deve garantir uma disponibilidade mínima de **99,5%** para evitar interrupções no serviço.  
+
+  - **Critério de Aceitação (CA01):**  
+    - O servidor deve ser configurado para manter **alta disponibilidade**, utilizando balanceamento de carga e redundância.  
+
+  - **Teste (T01):**  
+    - **Pré-condição:** Sistema hospedado em ambiente de produção com monitoramento ativo.  
+    - **Procedimento do teste:** Verificar logs de tempo de atividade ao longo de um mês.  
+    - **Resultado esperado:** O tempo de inatividade não deve ultrapassar **0,5%** no período testado.  
+    - **Pós-condição:** O sistema continua acessível mesmo em momentos de alta demanda.  
+
+- **RNF07 - Backup Automático de Dados**  
+  - O sistema deve realizar **backups automáticos diários** dos dados dos jogadores para evitar perdas.  
+
+  - **Critério de Aceitação (CA01):**  
+    - O sistema deve armazenar cópias de segurança dos rankings, estatísticas e configurações dos jogadores.  
+
+  - **Teste (T01):**  
+    - **Pré-condição:** O sistema deve estar configurado para realizar backups automáticos.  
+    - **Procedimento do teste:** Recuperar dados de backup e verificar sua integridade.  
+    - **Resultado esperado:** O sistema restaura os dados corretamente a partir do backup.  
+    - **Pós-condição:** Nenhuma perda de informação ocorre após uma eventual falha.  
+
+
+- **RNF08 - Interface Intuitiva e Atraente**  
+  - O jogo deve ter uma interface **clara, responsiva e de fácil navegação** para todos os tipos de usuários.  
+
+  - **Critério de Aceitação (CA01):**  
+    - A interface deve seguir princípios de **design UX/UI modernos**, garantindo uma experiência fluida.  
+
+  - **Teste (T01):**  
+    - **Pré-condição:** Usuários participando de testes de usabilidade.  
+    - **Procedimento do teste:** Realizar testes A/B com diferentes layouts e coletar feedback.  
+    - **Resultado esperado:** O layout escolhido apresenta alto nível de satisfação entre os usuários.  
+    - **Pós-condição:** O sistema mantém a usabilidade sem necessidade de tutoriais extensivos.  
+
+
+- **RNF09 - Facilidade de Manutenção**  
+  - O código-fonte deve ser estruturado e modular para facilitar **correções, melhorias e novas implementações**.  
+
+  - **Critério de Aceitação (CA01):**  
+    - O código deve seguir padrões como **SOLID** e **Clean Code**, além de estar bem documentado.  
+
+  - **Teste (T01):**  
+    - **Pré-condição:** Código disponível no repositório com documentação atualizada.  
+    - **Procedimento do teste:** Revisão de código e análise estática para verificar boas práticas.  
+    - **Resultado esperado:** O código é compreensível e fácil de modificar sem impactos negativos.  
+    - **Pós-condição:** O sistema permanece flexível para futuras atualizações.  
+
+
+- **RNF10 - Baixo Consumo de Recursos**  
+  - O jogo deve ser otimizado para **minimizar o consumo de CPU, memória e banda de rede**.  
+
+  - **Critério de Aceitação (CA01):**  
+    - O sistema deve ser capaz de rodar em dispositivos **com configurações modestas**, sem causar travamentos.  
+
+  - **Teste (T01):**  
+    - **Pré-condição:** Jogo executado em dispositivos de diferentes níveis de hardware.  
+    - **Procedimento do teste:** Medir consumo de memória, CPU e largura de banda.  
+    - **Resultado esperado:** O consumo de recursos permanece dentro dos limites definidos.  
+    - **Pós-condição:** O jogo roda suavemente em dispositivos menos potentes.  
+
+
+- **RNF11 - Latência Máxima Aceitável**  
+  - O sistema deve garantir que todas as ações do jogo tenham um **tempo de resposta inferior a 300ms** para evitar atrasos perceptíveis pelos jogadores.  
+
+  - **Critério de Aceitação (CA01):**  
+    - O tempo entre a entrada do jogador (ex: escolha de uma letra) e a atualização da interface não pode ultrapassar **300ms** em 95% dos casos.  
+
+  - **Teste (T01):**  
+    - **Pré-condição:** Conexão de internet padrão (mínimo 10 Mbps) e servidor operando normalmente.  
+    - **Procedimento do teste:** Simular ações dos jogadores e medir o tempo de resposta do sistema.  
+    - **Resultado esperado:** O tempo médio de resposta para cada ação é menor que **300ms**.  
+    - **Pós-condição:** O jogo mantém uma experiência fluida e responsiva para os usuários.  
+
+
+
+
